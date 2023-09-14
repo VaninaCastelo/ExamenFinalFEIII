@@ -10,17 +10,17 @@ export const Context = ({ children }) => {
   
   const url='https://jsonplaceholder.typicode.com/users'
   
-  const [dentista, setDentista] = useState([])
+  const [chars, setDentista] = useState([])
   
     useEffect(() => {
       axios (url)
-      .then(res => setDentista(res.data))
-      .catch(err => console(err))
+      .then(res => setDentista(res.data.results))
+      .catch(err => console.log(err))
     },[])
 
   
   return (
-    <CharStates.Provider value={{dentista}}>
+    <CharStates.Provider value={{chars}}>
       {children}
     </CharStates.Provider>
   );

@@ -3,13 +3,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import ContextProvider from './Components/utils/global.context.jsx';
+import Context from './Components/utils/global.context.jsx';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <ContextProvider>
+    <Context>
      <App/> 
-    </ContextProvider>
+    </Context>
       
   </BrowserRouter>
 );
