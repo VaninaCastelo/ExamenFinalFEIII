@@ -1,45 +1,51 @@
 import React from "react";
 import { useState } from 'react'
+import Contact from "../Routes/Contact";
 
+//Aqui deberan implementar el form completo con sus validaciones
 
 const Form = () => {
+  const [formData, setFormData] = useState({
+    nombre: '',
+    email: '',
+  });
+  const [error, setError] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
 
-  const [show, setShow] = useState(false)
-  const [error, setError] = useState(true)
-  const [cliente, setCliente] = useState({
-      nombre: '',
-      ciudad: '',
-  })
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (formData.nombre.length > 5 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      setSuccessMessage(`Gracias ${formData.nombre}, te contactaremos cuanto antes vía correo electrónico.`);
+      setError(false);
+    } else {
+      setError(true);
+      setSuccessMessage('');
+    }
+  };
 
-const handleSubmit = (event) => {
-
-  event.preventDefault()
-      if (cliente.nombre.length >3 && cliente.ciudad.length > 6)
-  { setShow(true)
-  setError(false)
-} else 
-setError (true)
-
-}
-
-const handleChange = (event) => setCliente({...cliente, nombre: event.target.value})
-console.log(cliente)
-  //Aqui deberan implementar el form completo con sus validaciones
-
+  
   return (
     <div>
-      <form>
-      <label htmlFor="Nombre">Ingrese Nombre</label>
-        <input type="text" onChange={handleChange}/>
-        <label htmlFor="Ciudad">Ingrese Ciudad</label>
-        <input type="text" onChange={(event)=> setCliente({...cliente, ciudad: event.target.value})}/>
-        <button onClick= {handleSubmit} > Enviar </button>
-        {error && <h6>Ingrese datos nuevamente</h6> }
-        {show ? <> <h4> Gracias {cliente.nombre} </h4>
-            <h6> De {cliente.ciudad} </h6> </>
-            : null }
-
-      </form>
+      <h2>Contacto</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="nombre">Nombre completo:</label>
+          <input type="text" id="nombre" name="nombre" value={formData.nombre} onChange={handleChange} required/>
+        </div>
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required/>
+        </div>
+        <button type="submit">Enviar</button>
+        </form>
+        {error && <p>Por favor, verifique su información nuevamente.</p>} {successMessage && <p>{successMessage}</p>}
     </div>
   );
 };

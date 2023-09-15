@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from './utils/global.context'
+import  dentistImg  from "../../public/images/doctor.jpg"
 
   const Card = ({ dentist }) => {
   const {dispatch} = useGlobalContext()
@@ -14,6 +15,7 @@ import { useGlobalContext } from './utils/global.context'
         {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 
         <Link to={'/detail/' + dentist.id}>
+        <img src={dentistImg} alt={dentist.name} style={{ width: "100%" }}/>
         <h3>{dentist.name}</h3>
         <h4>{dentist.username}</h4>
         <h4>{dentist.id}</h4>
