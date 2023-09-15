@@ -17,12 +17,12 @@ const Detail = () => {
 
     useEffect(() => {
       fetch(url)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
           dispatch({type: 'GET_DENTIST', payload: data})
-          setLoading(false)
+          setLoading(false);
       })
-  }, [])
+  }, [id])
   return (
     <>
       <h1> Informacion del Profesional </h1>
