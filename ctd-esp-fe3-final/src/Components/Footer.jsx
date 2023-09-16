@@ -1,8 +1,9 @@
 import React from 'react'
+//import '../styles/footer.css';
 
 const Footer = () => {
   return (
-    <footer style={{ width: "100%" }}>
+    <footer className="footer">
       <li className="social-icons">
         <a href="URL_DE_FACEBOOK" target="_blank"><img src="../../public/images/ico-facebook.png" alt="Facebook"/></a>
         <a href="URL_DE_INSTAGRAM" target="_blank"><img src="../../public/images/ico-instagram.png" alt="Twitter" /></a>

@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: aquamarine;
-    height: 200px;
+    background-color: rgb(9, 86, 101);
+    height: 100px;
     width: 100%;
   }
   
@@ -26,7 +26,7 @@
     padding: 0 20px;
   }
   
-  .theme-button {
+  .navbar button {
     background-color: navy;
     color: white;
     border: none;

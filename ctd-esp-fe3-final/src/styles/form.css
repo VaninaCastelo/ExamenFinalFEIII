@@ -1,0 +1,38 @@
+.cardForm {
+    background-color: lightgray;
+    text-align: center;
+    border: none;
+    padding: 50px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+  }
+  
+  .cardForm h2 {
+    color: rgb(5, 63, 70);
+    padding: 20px;
+  }
+  
+  .cardForm label {
+    color: rgb(5, 63, 70);
+  }
+  
+  .cardForm input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .cardForm button {
+    background-color: rgb(6, 85, 6);
+    border: none;
+    border-radius: 5px;
+    color: ivory;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+
+  .mensaje{
+    padding: 30px;
+  }

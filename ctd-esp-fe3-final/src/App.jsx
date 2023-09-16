@@ -7,6 +7,7 @@ import Detail from './Routes/Detail'
 import Favs from './Routes/Favs'
 import Contact from './Routes/Contact'
 import { useGlobalContext } from './Components/utils/global.context';
+import './index.css';
 
 
 

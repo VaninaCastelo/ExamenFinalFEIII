@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from 'react'
-import Contact from "../Routes/Contact";
+import '../styles/form.css';
+
 
 //Aqui deberan implementar el form completo con sus validaciones
 
@@ -32,7 +33,7 @@ const Form = () => {
 
   
   return (
-    <div>
+    <div className="cardForm">
       <h2>Contacto</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -45,7 +46,7 @@ const Form = () => {
         </div>
         <button type="submit">Enviar</button>
         </form>
-        {error && <p>Por favor, verifique su información nuevamente.</p>} {successMessage && <p>{successMessage}</p>}
+        <div className="mensaje">{error && <p>Por favor, verifique su información nuevamente.</p>} {successMessage && <p>{successMessage}</p>}</div>
     </div>
   );
 };
