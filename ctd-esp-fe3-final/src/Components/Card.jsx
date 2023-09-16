@@ -3,12 +3,18 @@ import { Link } from "react-router-dom";
 import { useGlobalContext } from './utils/global.context'
 import  dentistImg  from "../../public/images/doctor.jpg"
 
-  const Card = ({ dentist }) => {
-  const {dispatch} = useGlobalContext()
-  const addFav = ()=>{
-    // Aqui iria la logica para agregar la Card en el localStorage
-      dispatch({type: 'ADD_FAV', payload: dentist})
-  }
+  const Card = ({ dentist }) => {  
+    
+    const { state, dispatch } = useGlobalContext();
+    const isFavorite = state.favs.some(fav => fav.id === dentist.id);
+
+    const toggleFavorite = () => {
+      if (isFavorite) {
+         dispatch({ type: 'REMOVE_FAV', payload: dentist.id });
+        } else {
+         dispatch({ type: 'ADD_FAV', payload: dentist });
+    }
+  };
   return (
     <div className="card">
         {/* En cada card deberan mostrar en name - username y el id */}
@@ -22,7 +28,9 @@ import  dentistImg  from "../../public/images/doctor.jpg"
         </Link>
      
         {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} >🫶</button>
+        <button onClick={toggleFavorite}>
+        {isFavorite ? "Eliminar de Favoritos 🗑️" : "Agregar a Favoritos 🫶"}
+      </button>
     </div>
   );
 };

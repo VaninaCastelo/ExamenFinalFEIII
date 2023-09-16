@@ -15,6 +15,7 @@ const Navbar = () => {
 
   return (
     <nav>
+      
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
       <Link to='/'>Home</Link>
       <Link to='/favs'>Favorito</Link>

@@ -14,6 +14,9 @@ export const reducer = (state, action) => {
           return {...state, dentist: action.payload}
       case 'ADD_FAV':
           return {...state, favs: [...state.favs, action.payload]}
+      case 'REMOVE_FAV':
+          const updatedFavs = state.favs.filter((fav) => fav.id !== action.payload);
+          return { ...state, favs: updatedFavs };
       case 'SWITCH_THEME':
           return {...state, theme: !state.theme}
       default:
