@@ -3,7 +3,6 @@
     color: white; 
     height: 100px; 
     width: 100%;
-    display: flex;
     justify-content: center;
     align-items: center; 
   }
@@ -25,11 +24,13 @@
   }
 
   .footer li {
+    display: flex;
+    flex-direction: row;
     list-style: none
   }
-  .footer li img{
-    width: 30px;
+  .social-icons img {
+    width: 40px;
   }
-  .footer li img .logo {
-    width: 200px;
-  }
+ .logo-dh{
+  width: 300px;
+ }
