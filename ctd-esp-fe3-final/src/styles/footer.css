@@ -1,0 +1,35 @@
+.footer {
+    background-color: rgb(31, 31, 159); 
+    color: white; 
+    height: 100px; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+
+  .social-icons {
+    list-style: none; 
+    padding: 0; 
+    display: flex; 
+    gap: 10px; 
+  }
+  
+  .social-icons a {
+    text-decoration: none;
+    color: white;
+  }
+ 
+  .footer p {
+    margin-top: 20px; 
+  }
+
+  .footer li {
+    list-style: none
+  }
+  .footer li img{
+    width: 30px;
+  }
+  .footer li img .logo {
+    width: 200px;
+  }
