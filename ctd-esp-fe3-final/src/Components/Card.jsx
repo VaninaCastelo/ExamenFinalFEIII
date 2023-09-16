@@ -29,7 +29,7 @@ import  dentistImg  from "../../public/images/doctor.jpg"
      
         {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
         <button onClick={toggleFavorite}>
-        {isFavorite ? "Eliminar de Favoritos 🗑️" : "Agregar a Favoritos 🫶"}
+        {isFavorite ? "Eliminar de Favoritos 🗑️" : "Agregar a Favoritos ❤️"}
       </button>
     </div>
   );

@@ -1,0 +1,38 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aquamarine;
+    height: 200px;
+    width: 100%;
+  }
+  
+  .left {
+    flex: 1;
+    padding: 0 20px;
+  }
+  
+  .center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px;
+  }
+  
+  .theme-button {
+    background-color: navy;
+    color: white;
+    border: none;
+    border-radius: 50%; 
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+  }
